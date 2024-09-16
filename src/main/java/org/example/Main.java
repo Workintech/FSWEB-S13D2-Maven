@@ -3,42 +3,42 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-
-
+        System.out.println(isPerfectNumber(6));
+        System.out.println(isPerfectNumber(28));
+        System.out.println(isPerfectNumber(5));
+        System.out.println(isPerfectNumber(-1));
     }
 
     public static boolean isPalindrome(int num1) {
-        int original = num1; // num1'in orijinal halini koruyor.
-        int reverse = 0;
+
 
         num1 = Math.abs(num1); // Negatif sayılar için mutlak değeri alıyor.
 
-        while (num1 != 0) {
-            int remainder = num1 % 10;
-            reverse = reverse * 10 + remainder;
-            num1 = num1 / 10;
+        char[] digits = String.valueOf(num1).toCharArray();
+        String reversed = "";
+
+        for (int i = digits.length - 1; i >= 0; i--) {
+
+            reversed += digits[i];
         }
 
-        return original == reverse || original == -reverse; // Pozitif ve negatif palindromları kontrol ediyor.
+
+        return reversed.equalsIgnoreCase(String.valueOf(num1));
     }
 
     public static boolean isPerfectNumber(int number1) {
-
-        if (number1 <= 1) {
+        if (number1 < 0) {
             return false;
         }
 
-        int sum = 1;
+        int sum = 0;
 
-        for (int i = 2; i < number1 / 2; i++) {
+        for (int i = 1; i <= number1 / 2; i++) {
 
             if (number1 % i == 0)
                 sum += i;
         }
-        if (number1 == sum) {
-            return true;
-        }
-        return false;
+        return number1 == sum;
     }
 
     public static String numberToWords(int number1) {
@@ -86,9 +86,6 @@ public class Main {
         }
         return numToText.trim();
     }
-
-
-
 
 
 }

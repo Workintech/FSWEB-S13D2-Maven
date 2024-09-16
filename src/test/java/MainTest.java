@@ -11,9 +11,9 @@ public class MainTest {
     @DisplayName("Palindrom Sayılar Testi")
     @Test
     public void testIsPalindrome(){
-        assertEquals(Main.isPalindrome(-1221, 12), true);
-        assertEquals(Main.isPalindrome(707, 12), true);
-        assertEquals(Main.isPalindrome(11212, 12), false);
+        assertEquals(Main.isPalindrome(-1221), true);
+        assertEquals(Main.isPalindrome(707), true);
+        assertEquals(Main.isPalindrome(11212), false);
     }
 
     @DisplayName("Mükemmel Sayılar Testi")
