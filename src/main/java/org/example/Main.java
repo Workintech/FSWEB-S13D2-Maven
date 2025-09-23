@@ -7,7 +7,7 @@ public class Main {
 
         System.out.println(num[1] +" Mükemmel sayı mı? " + isPerfectNumber(num[1]));
         System.out.println(num[2] +" Mükemmel sayı mı? " + isPerfectNumber(num[2]));
-        System.out.println(numberToWordsString(num[3]));
+        System.out.println(numberToWords(num[3]));
     }
 
     public static boolean isPalindrome(int num) {
@@ -38,7 +38,7 @@ public class Main {
         }
         return sum == num;
     }
-    public static String numberToWordsString(int num) {
+    public static String numberToWords(int num) {
             int temp = num;
             String result = "";
         String[] numWords = {"Sıfır","Bir","İki","Üç","Dört","Beş","Altı","Yedi","Sekiz","Dokuz"};
