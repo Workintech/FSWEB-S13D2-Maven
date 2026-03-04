@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(ResultAnalyzer.class)
 public class MainTest {
 
-    @DisplayName("Palindrom Sayılar Testi")
+    @DisplayName("Palindromic Sayılar Testi")
     @Test
     public void testIsPalindrome(){
         IntStream.of(-1221, 707).forEach(i -> assertTrue(isPalindrome(i)));
