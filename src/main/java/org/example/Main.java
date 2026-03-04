@@ -1,4 +1,4 @@
-package org.example; // Eğer projede paket istenmiyorsa bu satırı silebilirsin.
+package org.example;
 
 public class Main {
 
