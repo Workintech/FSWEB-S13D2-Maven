@@ -3,34 +3,36 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.stream.IntStream;
+
+import static org.example.Main.isPalindrome;
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(ResultAnalyzer.class)
 public class MainTest {
 
-    @DisplayName("Palindrom Sayılar Testi")
+    @DisplayName("Palindromic Sayılar Testi")
     @Test
     public void testIsPalindrome(){
-        assertEquals(Main.isPalindrome(-1221), true);
-        assertEquals(Main.isPalindrome(707), true);
-        assertEquals(Main.isPalindrome(11212), false);
+        IntStream.of(-1221, 707).forEach(i -> assertTrue(isPalindrome(i)));
+        assertFalse(isPalindrome(11212));
     }
 
     @DisplayName("Mükemmel Sayılar Testi")
     @Test
     public void testIsPerfectNumber(){
-        assertEquals(Main.isPerfectNumber(6), true);
-        assertEquals(Main.isPerfectNumber(28), true);
-        assertEquals(Main.isPerfectNumber(5), false);
-        assertEquals(Main.isPerfectNumber(-1), false);
+        assertTrue(Main.isPerfectNumber(6));
+        assertTrue(Main.isPerfectNumber(28));
+        assertFalse(Main.isPerfectNumber(5));
+        assertFalse(Main.isPerfectNumber(-1));
 
     }
 
     @DisplayName("Sayıları Kelimelere Cevirme Testi")
     @Test
     public void testNumberToWords(){
-        assertEquals(Main.numberToWords(123), "One Two Three");
-        assertEquals(Main.numberToWords(1010), "One Zero One Zero");
-        assertEquals(Main.numberToWords(-12), "Invalid Value");
+        assertEquals("One Two Three", Main.numberToWords(123));
+        assertEquals("One Zero One Zero", Main.numberToWords(1010));
+        assertEquals("Invalid Value", Main.numberToWords(-12));
     }
 }
